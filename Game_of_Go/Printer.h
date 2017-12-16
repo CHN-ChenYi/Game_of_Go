@@ -27,6 +27,7 @@ class Printer {
       if (*owner == *players[i])
         return player_icon[i];
     }
+    return '!';
   }
 
  public:
