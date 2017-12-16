@@ -8,7 +8,7 @@
 class Player {
   std::string name;
 
-public:
+ public:
   Player();
   Player(const std::string _name);
   ~Player();
