@@ -21,9 +21,11 @@ class Board {
     return size;
   }
 
-  Cell* GetCell(const int &x, const int &y) {
-    return table[x][y];
+  Cell* GetCell(const int &_x, const int &_y) {
+    return table[_x][_y];
   }
+
+  bool PlayAt(const int &_x, const int &_y, const Player const * _player);
 
 };
 

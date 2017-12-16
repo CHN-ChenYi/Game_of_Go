@@ -19,3 +19,7 @@ Board::Board(const short &_size) {
 }
 
 Board::~Board() { }
+
+bool PlayAt(const int &_x, const int &_y, const Player const * _player) {
+  if (_x >= _size)
+}
