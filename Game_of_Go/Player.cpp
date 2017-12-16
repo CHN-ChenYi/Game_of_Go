@@ -3,8 +3,11 @@
 
 
 Player::Player() {
+  name = "";
 }
 
-
-Player::~Player() {
+Player::Player(const std::string _name) {
+  name = _name;
 }
+
+Player::~Player() { }
