@@ -36,6 +36,7 @@ bool Game::ReadCommand(int &x, int &y) {
       y = ope[3] & 0xf;
       if (len > 4 && isdigit(ope[4]))
         y = y * 10 + (ope[4] & 0xf);
+      y--;
       break;
     default:
       return 0;
@@ -54,8 +55,12 @@ Player* Game::Play() {
     if (now_player == num_of_player)
       now_player = 0;
 
+    AskForMove:
     if (!ReadCommand(x, y))
       break;
-    board->PlayAt(y, x, p[now_player]);
+    if (!board->PlayAt(y, x, players[now_player])) {
+      cout << "Your movement is illegal." << endl;
+      goto AskForMove;
+    }
   }
 }
