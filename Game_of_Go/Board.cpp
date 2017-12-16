@@ -18,5 +18,4 @@ Board::Board(const int &_size) {
 
 }
 
-Board::~Board() {
-}
+Board::~Board() { }

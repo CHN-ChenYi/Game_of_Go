@@ -12,5 +12,4 @@ Cell::Cell(Player* const _owner) {
   dead_time = -1;
 }
 
-Cell::~Cell() {
-}
+Cell::~Cell() { }
