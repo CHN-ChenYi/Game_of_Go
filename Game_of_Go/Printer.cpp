@@ -20,7 +20,7 @@ void Printer::Print(Board *_board) {
   // printing header
   for (int i = 0; i < n / 10 + 2; i++)
     cout << " "; // print offset created by row numbering
-  for (int i = 0; i < n; i++) cout << 'A' + i << " ";
+  for (int i = 0; i < n; i++) cout << char('A' + i) << " ";
   cout.put(cout.widen('\n'));
   cout.flush();
   for (int i = 0; i < n / 10 + 1; i++)
@@ -36,7 +36,7 @@ void Printer::Print(Board *_board) {
   for (int i = 0; i < n; i++) {
 
     // printing row numbering at left side
-    for (int j = 0; j < n / 10 - i / 10; j++)
+    for (int j = 0; j < n / 10 - (i + 1) / 10; j++)
       cout << " "; // print trailing spaces for formatting
     cout << i + 1 << "|";
 
@@ -62,7 +62,7 @@ void Printer::Print(Board *_board) {
   for (int i = 0; i < n / 10 + 2; i++)
     cout << " ";
   for (int i = 0; i < n; i++)
-    cout << 'A' + i << " ";
+    cout << char('A' + i) << " ";
   cout.put(cout.widen('\n'));
   cout.flush();
 
