@@ -3,11 +3,11 @@
 
 
 Player::Player() {
-  name = "";
+  id = rand();
 }
 
-Player::Player(const string _name) {
-  name = _name;
+Player::Player(const int &_id) {
+  id = _id;
 }
 
 Player::~Player() { }

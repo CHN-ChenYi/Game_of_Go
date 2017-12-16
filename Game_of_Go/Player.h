@@ -4,26 +4,35 @@
 #define PLAYER_H
 
 #include <string>
+#include <cstdlib>
 using std::string;
 
 class Player {
-  string name;
+  int id;
 
  public:
   Player();
-  Player(const string _name);
+  Player(const int &_id);
   ~Player();
 
-  string getName() const {
-    return this->name;
+  int GetId() const {
+    return id;
   }
 
+  bool operator==(const Player &rhs) {
+    return id == rhs.id;
+  }
+  bool operator!=(const Player &rhs) {
+    return !(id == rhs.id);
+  }
+  /*
   bool operator==(const Player &rhs) {
     return this == &rhs;
   }
   bool operator!=(const Player &rhs) {
     return !(*this == rhs);
   }
+  */
 
 };
 
