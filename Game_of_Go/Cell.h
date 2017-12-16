@@ -14,6 +14,10 @@ class Cell {
   Cell(Player* const _owner);
   ~Cell();
 
+  void SetOwner(Player *_owner) {
+    owner = _owner;
+  }
+
   bool IsDead() {
     return dead_time != -1;
   }
