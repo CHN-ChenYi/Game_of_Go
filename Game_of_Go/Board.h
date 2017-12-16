@@ -9,13 +9,17 @@
 using std::vector;
 
 class Board {
-  int size;
+  short size;
   vector< vector<Cell*> > table;
 
  public:
   Board();
-  Board(const int &_size);
+  Board(const short &_size);
   ~Board();
+
+  int GetSize() {
+    return size;
+  }
 
 };
 

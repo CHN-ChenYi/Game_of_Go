@@ -6,7 +6,7 @@ Board::Board() {
   size = 0;
 }
 
-Board::Board(const int &_size) {
+Board::Board(const short &_size) {
   size = _size;
   
   table = vector< vector<Cell*> >();
