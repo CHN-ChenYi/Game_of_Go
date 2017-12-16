@@ -11,6 +11,7 @@ using std::vector;
 #include <iostream>
 using std::cin;
 using std::cout;
+using std::endl;
 
 class Printer {
   char empty_icon;
