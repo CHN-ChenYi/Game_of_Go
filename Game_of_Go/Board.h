@@ -25,7 +25,7 @@ class Board {
     return table[_x][_y];
   }
 
-  bool PlayAt(const int &_x, const int &_y, const Player const * _player);
+  bool PlayAt(const int &_x, const int &_y, Player *_player);
 
 };
 

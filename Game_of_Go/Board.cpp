@@ -20,6 +20,9 @@ Board::Board(const short &_size) {
 
 Board::~Board() { }
 
-bool PlayAt(const int &_x, const int &_y, const Player const * _player) {
-  if (_x >= _size)
+bool Board::PlayAt(const int &_x, const int &_y, Player *_player) {
+  if (_x >= size || _y >= size || table[_x][_y]->GetOwner() != NULL)
+    return false;
+  table[_x][_y]->SetOwner(_player);
+  return true;
 }
