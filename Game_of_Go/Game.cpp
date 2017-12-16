@@ -7,15 +7,13 @@ Game::Game() { }
 Game::Game(const int &_num_of_player, const short &_width_of_board) {
   board = new Board(_width_of_board);
   num_of_player = _num_of_player;
-  vector<Player*> _players;
   vector<char> _player_icon;
+  players.clear();
   for (int i = 0; i < num_of_player; i++) {
-    _players.push_back(new Player(i));
+    players.push_back(new Player(i));
     _player_icon.push_back('k' + i);
   }
-  printer = new Printer('.', num_of_player, _players, _player_icon);
-  for (int i = 0; i < num_of_player; i++)
-    players.push_back(new Player);
+  printer = new Printer('.', num_of_player, players, _player_icon);\
 }
 
 Game::~Game() { }
