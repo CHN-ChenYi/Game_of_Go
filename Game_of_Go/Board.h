@@ -21,6 +21,10 @@ class Board {
     return size;
   }
 
+  Cell* GetCell(const int &x, const int &y) {
+    return table[x][y];
+  }
+
 };
 
 
