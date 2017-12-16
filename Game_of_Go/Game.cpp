@@ -10,7 +10,7 @@ Game::Game(const int &_num_of_player, const short &_width_of_board) {
   vector<Player*> _players;
   vector<char> _player_icon;
   for (int i = 0; i < num_of_player; i++) {
-    _players.push_back(new Player);
+    _players.push_back(new Player(i));
     _player_icon.push_back('k' + i);
   }
   printer = new Printer('.', num_of_player, _players, _player_icon);
@@ -23,10 +23,11 @@ Game::~Game() { }
 bool Game::ReadCommand(int &x, int &y) {
   string ope;
   cout << "Type you command:" << endl;
-  cin >> ope;
+  getline(cin, ope);
   const int len = ope.length();
   switch (ope[0]) {
-    case 'p' || 'P':
+    case 'p':
+    case 'P':
       if (len > 2 && isupper(ope[2])) {
         x = ope[2] - 'A';
       } else if (len > 2 && islower(ope[2])) {
