@@ -31,11 +31,15 @@ bool Game::ReadCommand(int &x, int &y) {
       } else if (len > 2 && islower(ope[2])) {
         x = ope[2] - 'a';
       } else {
+        cls();
         cout << "Undefined command" << endl;
+        printer->Print(board);
         return ReadCommand(x, y);
       }
       if (len > 3 && !isdigit(ope[3])) {
+        cls();
         cout << "Undefined command" << endl;
+        printer->Print(board);
         return ReadCommand(x, y);
       }
       y = ope[3] & 0xf;
@@ -64,7 +68,9 @@ Player* Game::Play() {
     if (!ReadCommand(x, y))
       break;
     if (!board->PlayAt(y, x, players[now_player])) {
+      cls();
       cout << "Your movement is illegal." << endl;
+      printer->Print(board);
       goto AskForMove;
     }
   }
