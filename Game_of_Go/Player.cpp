@@ -6,7 +6,7 @@ Player::Player() {
   name = "";
 }
 
-Player::Player(const std::string _name) {
+Player::Player(const string _name) {
   name = _name;
 }
 

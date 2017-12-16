@@ -4,16 +4,17 @@
 #define PLAYER_H
 
 #include <string>
+using std::string;
 
 class Player {
-  std::string name;
+  string name;
 
  public:
   Player();
-  Player(const std::string _name);
+  Player(const string _name);
   ~Player();
 
-  std::string getName() const {
+  string getName() const {
     return this->name;
   }
 
