@@ -10,7 +10,7 @@ class Game {
   Printer* printer;
   int num_of_player;
   vector<Player*> players;
-  bool ReadCommand(int &x, int &y);
+  bool ReadCommand(Player * const _now_player, int &x, int &y);
   void cls() {
     if (system("CLS"))
       system("clear");

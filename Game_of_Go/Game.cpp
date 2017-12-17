@@ -18,9 +18,9 @@ Game::Game(const int &_num_of_player, const short &_width_of_board) {
 
 Game::~Game() { }
 
-bool Game::ReadCommand(int &x, int &y) {
+bool Game::ReadCommand(Player * const _now_player, int &x, int &y) {
   string ope;
-  cout << "Type you command:" << endl;
+  cout << "Type your(" << printer->GetIcon(_now_player) << ") command:" << endl;
   getline(cin, ope);
   const int len = ope.length();
   switch (ope[0]) {
@@ -34,13 +34,13 @@ bool Game::ReadCommand(int &x, int &y) {
         cls();
         cout << "Undefined command" << endl;
         printer->Print(board);
-        return ReadCommand(x, y);
+        return ReadCommand(_now_player, x, y);
       }
       if (len > 3 && !isdigit(ope[3])) {
         cls();
         cout << "Undefined command" << endl;
         printer->Print(board);
-        return ReadCommand(x, y);
+        return ReadCommand(_now_player, x, y);
       }
       y = ope[3] & 0xf;
       if (len > 4 && isdigit(ope[4]))
@@ -67,7 +67,7 @@ Player* Game::Play() {
       now_player = 0;
 
     AskForMove:
-    if (!ReadCommand(x, y))
+    if (!ReadCommand(players[now_player], x, y))
       break;
     if (!board->PlayAt(time_index, y, x, players[now_player])) {
       cls();
