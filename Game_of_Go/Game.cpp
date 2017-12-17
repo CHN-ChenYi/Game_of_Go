@@ -55,19 +55,21 @@ bool Game::ReadCommand(int &x, int &y) {
 
 Player* Game::Play() {
   int x, y;
+  int time_index = 0;
   int now_player = -1;
   while (true) {
     cls();
     printer->Print(board);
 
     now_player++;
+    time_index++;
     if (now_player == num_of_player)
       now_player = 0;
 
     AskForMove:
     if (!ReadCommand(x, y))
       break;
-    if (!board->PlayAt(y, x, players[now_player])) {
+    if (!board->PlayAt(time_index, y, x, players[now_player])) {
       cls();
       cout << "Your movement is illegal." << endl;
       printer->Print(board);
