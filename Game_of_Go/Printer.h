@@ -21,13 +21,7 @@ class Printer {
 
   char GetIcon(Cell *_cell) {
     Player* owner = _cell->GetOwner();
-    if (owner == NULL)
-      return empty_icon;
-    for (int i = 0; i < num_of_player; i++) {
-      if (*owner == *players[i])
-        return player_icon[i];
-    }
-    return '!';
+    return GetIcon(owner);
   }
 
  public:
@@ -37,6 +31,16 @@ class Printer {
   ~Printer();
 
   void Print(Board *_board);
+
+  char GetIcon(Player * const _player) {
+    if (_player == NULL)
+      return empty_icon;
+    for (int i = 0; i < num_of_player; i++) {
+      if (*_player == *players[i])
+        return player_icon[i];
+    }
+    return '!';
+  }
 
 };
 
