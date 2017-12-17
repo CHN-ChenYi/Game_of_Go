@@ -30,7 +30,7 @@ class Cell {
   }
 
   bool NeedToBeRemoved(const int &_now_time) {
-    return dead_time <= _now_time;
+    return dead_time != -1 && dead_time <= _now_time;
   }
 
   Player* GetOwner() {
