@@ -19,20 +19,21 @@ class Player {
     return id;
   }
 
+  /*
   bool operator==(const Player &rhs) {
     return id == rhs.id;
   }
   bool operator!=(const Player &rhs) {
     return !(id == rhs.id);
   }
-  /*
+  */
+
   bool operator==(const Player &rhs) {
     return this == &rhs;
   }
   bool operator!=(const Player &rhs) {
     return !(*this == rhs);
   }
-  */
 
 };
 
